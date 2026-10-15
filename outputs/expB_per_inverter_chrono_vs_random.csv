@@ -1,0 +1,9 @@
+,Chronological (test days 30-34),Chronological (test days 30-34),Chronological (test days 30-34),Chronological (test days 30-34),Chronological (test days 30-34),Chronological (test days 30-34),Random 80/20 (same data),Random 80/20 (same data),Random 80/20 (same data),Random 80/20 (same data),Random 80/20 (same data),Random 80/20 (same data)
+,RMSE,MAE,R2,RMSE_day,MAE_day,R2_day,RMSE,MAE,R2,RMSE_day,MAE_day,R2_day
+model,,,,,,,,,,,,
+Linear (irradiation only),0.635,0.275,0.973,0.853,0.438,0.949,0.606,0.271,0.978,0.806,0.426,0.958
+Linear (3 weather inputs),0.636,0.273,0.973,0.856,0.445,0.948,0.604,0.266,0.978,0.804,0.425,0.958
+Decision tree,0.61,0.209,0.975,0.822,0.38,0.952,0.559,0.208,0.981,0.746,0.372,0.964
+Random forest,0.596,0.203,0.976,0.804,0.368,0.954,0.531,0.188,0.983,0.709,0.335,0.967
+Gradient boosting (HistGB),0.588,0.194,0.977,0.793,0.35,0.956,0.55,0.206,0.982,0.734,0.365,0.965
+MLP (32-16),0.591,0.198,0.977,0.796,0.347,0.955,0.569,0.223,0.98,0.76,0.381,0.962

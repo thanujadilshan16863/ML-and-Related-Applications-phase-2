@@ -1,0 +1,8 @@
+Model,Split,RMSE,MAE,R2,RMSE (daytime)
+Paper – baseline LSTM (reported),not described,2.2,1.15,0.67,
+Paper – X-LSTM-EO (reported),not described,0.46,0.229,0.99,
+"Floor: best any weather-only model (paper table, in-sample)",—,0.425,0.159,0.989,
+Mine: untuned decision tree (Exp A),random 80/20,0.457,0.17,0.987,0.609
+"Mine: untuned linear, 3 inputs (Exp A)",random 80/20,0.549,0.26,0.982,0.73
+"Mine: Gradient boosting (HistGB) (Exp B, tuned on val)",chronological,0.588,0.194,0.977,0.793
+Mine: oracle floor on test days (Exp B),chronological,0.54,0.153,0.98,0.729

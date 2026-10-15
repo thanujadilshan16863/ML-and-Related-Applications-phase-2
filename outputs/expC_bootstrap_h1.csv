@@ -1,0 +1,7 @@
+,RMSE_day,CI_low,CI_high,skill_low,skill_high
+Climatology,1.849,1.668,2.01,-0.325,-0.222
+Gradient boosting (HistGB),1.323,1.191,1.438,0.067,0.11
+MLP (32-16),1.314,1.166,1.44,0.08,0.122
+Persistence,1.459,1.294,1.596,,
+Random forest,1.324,1.155,1.472,0.077,0.11
+Ridge (all features),1.388,1.257,1.506,0.027,0.066
