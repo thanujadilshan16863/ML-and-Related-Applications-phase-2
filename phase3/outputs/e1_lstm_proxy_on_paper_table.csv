@@ -1,0 +1,6 @@
+,RMSE,RMSE,MAE,MAE,R2,R2,RMSE_day,RMSE_day
+,mean,std,mean,std,mean,std,mean,std
+model,,,,,,,,
+Decision tree (untuned),0.471,0.023,0.173,0.003,0.987,0.001,0.626,0.032
+"LSTM proxy (24 units, lr=0.01)",0.528,0.019,0.234,0.006,0.983,0.001,0.701,0.028
+"LSTM proxy (24 units, lr=0.1)",0.56,0.007,0.311,0.021,0.981,0.0,0.735,0.01

@@ -1,0 +1,5 @@
+scenario,Ridge,Random forest,HistGB,MLP,LSTM proxy
+none,0.3961,0.3107,0.3095,0.3602,0.2817
+irradiation lost (also lag1),4.2286,4.1368,4.1604,3.6265,3.9655
+module temp lost,0.3691,0.3066,0.3062,0.5517,0.3431
+ambient temp lost,0.3954,0.3025,0.3187,0.4001,0.3014

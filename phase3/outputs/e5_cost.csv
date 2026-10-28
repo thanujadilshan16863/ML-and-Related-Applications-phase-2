@@ -1,0 +1,5 @@
+,fit_seconds,parameters
+Ridge,0.004,16
+HistGB + lags,0.098,~8 leaves x 100 trees
+"LSTM proxy (24 units, window 1, 45 epochs, batch 10)",20.492,3193
+"LSTM (24 units, window 8)",20.19,3097

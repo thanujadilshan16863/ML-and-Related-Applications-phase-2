@@ -1,0 +1,4 @@
+interval,coverage,cov_lo95,cov_hi95,mean_width
+Raw quantile (untrained calibration),0.89,0.858,0.922,6.979
+CQR (calibrated on val days),0.773,0.73,0.823,6.739
+Split conformal (constant width),0.78,0.761,0.802,2.723

@@ -1,0 +1,583 @@
+{
+ "floor_paper_rmse": 0.42545926340261614,
+ "paper_table": {
+  "Decision tree (untuned)": {
+   "RMSE": 0.47057750663124437,
+   "RMSE_sd": 0.022700824559537643,
+   "MAE": 0.17275702570664506,
+   "R2": 0.986764506105664,
+   "RMSE_day": 0.6260921694606992
+  },
+  "LSTM proxy (24 units, lr=0.1)": {
+   "RMSE": 0.5600731989627182,
+   "RMSE_sd": 0.007088609757895515,
+   "MAE": 0.31083393161695344,
+   "R2": 0.9812917206127899,
+   "RMSE_day": 0.7345513115726602
+  },
+  "LSTM proxy (24 units, lr=0.01)": {
+   "RMSE": 0.5279082969581282,
+   "RMSE_sd": 0.01927001550475558,
+   "MAE": 0.23426167385733276,
+   "R2": 0.9833570313140741,
+   "RMSE_day": 0.7014373003907615
+  }
+ },
+ "split": {
+  "train_days": 24,
+  "val_days": 5,
+  "test_days": 5,
+  "n_rows": 3148,
+  "test_first": "2020-06-13",
+  "test_last": "2020-06-17"
+ },
+ "nowcast": {
+  "Climatology": {
+   "RMSE": 1.369,
+   "RMSE_day": 1.8456,
+   "MAE": 0.7053,
+   "R2": 0.8714,
+   "RMSE_day_sd": 0.0
+  },
+  "Ridge": {
+   "RMSE": 0.3004,
+   "RMSE_day": 0.3961,
+   "MAE": 0.1944,
+   "R2": 0.9938,
+   "RMSE_day_sd": 0.0
+  },
+  "Random forest": {
+   "RMSE": 0.2305,
+   "RMSE_day": 0.3107,
+   "MAE": 0.1075,
+   "R2": 0.9964,
+   "RMSE_day_sd": 0.0
+  },
+  "HistGB": {
+   "RMSE": 0.2296,
+   "RMSE_day": 0.3095,
+   "MAE": 0.1144,
+   "R2": 0.9964,
+   "RMSE_day_sd": 0.0
+  },
+  "MLP": {
+   "RMSE": 0.2679,
+   "RMSE_day": 0.3602,
+   "MAE": 0.1419,
+   "R2": 0.995,
+   "RMSE_day_sd": 0.0359
+  },
+  "LSTM proxy": {
+   "RMSE": 0.2097,
+   "RMSE_day": 0.2817,
+   "MAE": 0.1108,
+   "R2": 0.997,
+   "RMSE_day_sd": 0.0021
+  }
+ },
+ "nowcast_best_params": {
+  "Ridge": {},
+  "Random forest": {
+   "min_samples_leaf": 5,
+   "max_features": 1.0
+  },
+  "HistGB": {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 8,
+   "l2_regularization": 0
+  },
+  "MLP": {
+   "hidden_layer_sizes": [
+    64,
+    32
+   ],
+   "alpha": 0.01
+  },
+  "LSTM proxy": {
+   "lr": 0.001
+  }
+ },
+ "nowcast_lstm_lr_table": [
+  {
+   "lr": 0.001,
+   "val_RMSE": 0.1911
+  },
+  {
+   "lr": 0.01,
+   "val_RMSE": 0.2516
+  },
+  {
+   "lr": 0.1,
+   "val_RMSE": 0.3073
+  }
+ ],
+ "forecast_h1": {
+  "rows": 3069,
+  "test_rows": 469,
+  "table": [
+   {
+    "model": "Persistence",
+    "RMSE_day": 1.4744,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.0373,
+    "R2_day": 0.8429,
+    "skill_vs_persistence": 0.0
+   },
+   {
+    "model": "Climatology",
+    "RMSE_day": 1.8729,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.3033,
+    "R2_day": 0.7464,
+    "skill_vs_persistence": -0.2703
+   },
+   {
+    "model": "Ridge",
+    "RMSE_day": 1.4072,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 0.9908,
+    "R2_day": 0.8568,
+    "skill_vs_persistence": 0.0455
+   },
+   {
+    "model": "Ridge + lags",
+    "RMSE_day": 1.3802,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 0.9744,
+    "R2_day": 0.8623,
+    "skill_vs_persistence": 0.0639
+   },
+   {
+    "model": "Random forest",
+    "RMSE_day": 1.3408,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 0.9009,
+    "R2_day": 0.87,
+    "skill_vs_persistence": 0.0906
+   },
+   {
+    "model": "Random forest + lags",
+    "RMSE_day": 1.3346,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 0.8977,
+    "R2_day": 0.8712,
+    "skill_vs_persistence": 0.0948
+   },
+   {
+    "model": "HistGB",
+    "RMSE_day": 1.3517,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 0.914,
+    "R2_day": 0.8679,
+    "skill_vs_persistence": 0.0832
+   },
+   {
+    "model": "HistGB + lags (Alt. A)",
+    "RMSE_day": 1.3225,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 0.8901,
+    "R2_day": 0.8736,
+    "skill_vs_persistence": 0.103
+   },
+   {
+    "model": "LSTM proxy (window 1)",
+    "RMSE_day": 1.3265,
+    "RMSE_day_sd": 0.0216,
+    "MAE_day": 0.8836,
+    "R2_day": 0.874,
+    "skill_vs_persistence": 0.1003
+   },
+   {
+    "model": "LSTM (window 8)",
+    "RMSE_day": 1.3129,
+    "RMSE_day_sd": 0.0263,
+    "MAE_day": 0.8654,
+    "R2_day": 0.8777,
+    "skill_vs_persistence": 0.1095
+   }
+  ],
+  "ci": {
+   "skill_base": [
+    0.07921132801902642,
+    0.08593822498840131
+   ],
+   "skill_alt": [
+    0.07881325625738933,
+    0.11939979853190219
+   ],
+   "skill_ridge_lags": [
+    0.021750628164131758,
+    0.09520752182519937
+   ],
+   "d_rmse": [
+    -0.05133570456102455,
+    0.0008106634263065349
+   ],
+   "d_rmse_rf": [
+    -0.026411701501209528,
+    0.015216781106093924
+   ]
+  },
+  "best_params_histgb_lags": {
+   "learning_rate": 0.03,
+   "max_leaf_nodes": 8.0,
+   "l2_regularization": 1.0
+  }
+ },
+ "forecast_h4": {
+  "rows": 3048,
+  "test_rows": 465,
+  "table": [
+   {
+    "model": "Persistence",
+    "RMSE_day": 2.5807,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 2.0831,
+    "R2_day": 0.5257,
+    "skill_vs_persistence": 0.0
+   },
+   {
+    "model": "Climatology",
+    "RMSE_day": 1.8698,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.295,
+    "R2_day": 0.751,
+    "skill_vs_persistence": 0.2755
+   },
+   {
+    "model": "Ridge",
+    "RMSE_day": 2.0384,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.6333,
+    "R2_day": 0.7041,
+    "skill_vs_persistence": 0.2101
+   },
+   {
+    "model": "Ridge + lags",
+    "RMSE_day": 1.9951,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.5945,
+    "R2_day": 0.7165,
+    "skill_vs_persistence": 0.2269
+   },
+   {
+    "model": "Random forest",
+    "RMSE_day": 1.7242,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.2045,
+    "R2_day": 0.7883,
+    "skill_vs_persistence": 0.3319
+   },
+   {
+    "model": "Random forest + lags",
+    "RMSE_day": 1.7294,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.2276,
+    "R2_day": 0.787,
+    "skill_vs_persistence": 0.3299
+   },
+   {
+    "model": "HistGB",
+    "RMSE_day": 1.7224,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.216,
+    "R2_day": 0.7887,
+    "skill_vs_persistence": 0.3326
+   },
+   {
+    "model": "HistGB + lags (Alt. A)",
+    "RMSE_day": 1.7152,
+    "RMSE_day_sd": 0.0,
+    "MAE_day": 1.2221,
+    "R2_day": 0.7905,
+    "skill_vs_persistence": 0.3354
+   },
+   {
+    "model": "LSTM proxy (window 1)",
+    "RMSE_day": 1.7101,
+    "RMSE_day_sd": 0.0304,
+    "MAE_day": 1.1925,
+    "R2_day": 0.7928,
+    "skill_vs_persistence": 0.3374
+   },
+   {
+    "model": "LSTM (window 8)",
+    "RMSE_day": 1.822,
+    "RMSE_day_sd": 0.0246,
+    "MAE_day": 1.2588,
+    "R2_day": 0.7693,
+    "skill_vs_persistence": 0.294
+   }
+  ],
+  "ci": {
+   "skill_base": [
+    0.2888273524464149,
+    0.37730200611094744
+   ],
+   "skill_alt": [
+    0.2916807160976963,
+    0.38328972144883644
+   ],
+   "skill_ridge_lags": [
+    0.20077365914191136,
+    0.24384492207337283
+   ],
+   "d_rmse": [
+    -0.021361833753280608,
+    0.006666974109246437
+   ],
+   "d_rmse_rf": [
+    -0.011845452888182617,
+    0.03390885681679579
+   ]
+  },
+  "best_params_histgb_lags": {
+   "learning_rate": 0.03,
+   "max_leaf_nodes": 8.0,
+   "l2_regularization": 0.0
+  }
+ },
+ "intervals_h1": [
+  {
+   "interval": "Raw quantile (untrained calibration)",
+   "coverage": 0.89,
+   "cov_lo95": 0.858,
+   "cov_hi95": 0.922,
+   "mean_width": 6.979
+  },
+  {
+   "interval": "CQR (calibrated on val days)",
+   "coverage": 0.773,
+   "cov_lo95": 0.73,
+   "cov_hi95": 0.823,
+   "mean_width": 6.739
+  },
+  {
+   "interval": "Split conformal (constant width)",
+   "coverage": 0.78,
+   "cov_lo95": 0.761,
+   "cov_hi95": 0.802,
+   "mean_width": 2.723
+  }
+ ],
+ "intervals_h4": [
+  {
+   "interval": "Raw quantile (untrained calibration)",
+   "coverage": 0.917,
+   "cov_lo95": 0.853,
+   "cov_hi95": 0.963,
+   "mean_width": 7.464
+  },
+  {
+   "interval": "CQR (calibrated on val days)",
+   "coverage": 0.76,
+   "cov_lo95": 0.679,
+   "cov_hi95": 0.838,
+   "mean_width": 6.925
+  },
+  {
+   "interval": "Split conformal (constant width)",
+   "coverage": 0.74,
+   "cov_lo95": 0.707,
+   "cov_hi95": 0.777,
+   "mean_width": 3.779
+  }
+ ],
+ "cost": {
+  "ridge_s": 0.00402689992915839,
+  "histgb_s": 0.09844049997627735,
+  "lstm_s": 20.4917137499433,
+  "lstm_w8_s": 20.190032300015446,
+  "lstm_params": 3193,
+  "lstm_w8_params": 3097,
+  "train_rows": 2600
+ },
+ "noise": {
+  "table": [
+   {
+    "sigma": 0.0,
+    "Ridge": 0.3961,
+    "Random forest": 0.3107,
+    "HistGB": 0.3095,
+    "MLP": 0.3602,
+    "LSTM proxy": 0.2817
+   },
+   {
+    "sigma": 0.05,
+    "Ridge": 0.4423,
+    "Random forest": 0.3606,
+    "HistGB": 0.3676,
+    "MLP": 0.397,
+    "LSTM proxy": 0.337
+   },
+   {
+    "sigma": 0.1,
+    "Ridge": 0.5526,
+    "Random forest": 0.489,
+    "HistGB": 0.4891,
+    "MLP": 0.4896,
+    "LSTM proxy": 0.4683
+   },
+   {
+    "sigma": 0.2,
+    "Ridge": 0.8592,
+    "Random forest": 0.8032,
+    "HistGB": 0.7897,
+    "MLP": 0.748,
+    "LSTM proxy": 0.8016
+   },
+   {
+    "sigma": 0.4,
+    "Ridge": 1.5677,
+    "Random forest": 1.4918,
+    "HistGB": 1.4511,
+    "MLP": 1.3304,
+    "LSTM proxy": 1.5053
+   }
+  ],
+  "sensitivity": {
+   "Ridge": 14.39206239518973,
+   "Random forest": 13.334088264102796,
+   "HistGB": 12.60634230240016,
+   "MLP": 10.283649719357804,
+   "LSTM proxy": 13.691246705907588
+  },
+  "fit_r2_sigma_le_0.2": {
+   "Ridge": 0.9999107814935033,
+   "Random forest": 0.999806886818528,
+   "HistGB": 0.998766521233607,
+   "MLP": 0.9999204480293066,
+   "LSTM proxy": 0.9999893538193629
+  }
+ },
+ "dimensionality": [
+  {
+   "extra_features": 0,
+   "Ridge": 0.3961,
+   "Random forest": 0.3107,
+   "HistGB": 0.3095,
+   "MLP": 0.3602,
+   "LSTM proxy": 0.2817
+  },
+  {
+   "extra_features": 10,
+   "Ridge": 0.3981,
+   "Random forest": 0.3121,
+   "HistGB": 0.3124,
+   "MLP": 0.4397,
+   "LSTM proxy": 0.3257
+  },
+  {
+   "extra_features": 50,
+   "Ridge": 0.3983,
+   "Random forest": 0.3177,
+   "HistGB": 0.3156,
+   "MLP": 0.7595,
+   "LSTM proxy": 0.5786
+  },
+  {
+   "extra_features": 200,
+   "Ridge": 0.405,
+   "Random forest": 0.318,
+   "HistGB": 0.3151,
+   "MLP": 1.3272,
+   "LSTM proxy": 1.1513
+  }
+ ],
+ "rows_per_feature_200": 12.96116504854369,
+ "outage": [
+  {
+   "scenario": "none",
+   "Ridge": 0.3961,
+   "Random forest": 0.3107,
+   "HistGB": 0.3095,
+   "MLP": 0.3602,
+   "LSTM proxy": 0.2817
+  },
+  {
+   "scenario": "irradiation lost (also lag1)",
+   "Ridge": 4.2286,
+   "Random forest": 4.1368,
+   "HistGB": 4.1604,
+   "MLP": 3.6265,
+   "LSTM proxy": 3.9655
+  },
+  {
+   "scenario": "module temp lost",
+   "Ridge": 0.3691,
+   "Random forest": 0.3066,
+   "HistGB": 0.3062,
+   "MLP": 0.5517,
+   "LSTM proxy": 0.3431
+  },
+  {
+   "scenario": "ambient temp lost",
+   "Ridge": 0.3954,
+   "Random forest": 0.3025,
+   "HistGB": 0.3187,
+   "MLP": 0.4001,
+   "LSTM proxy": 0.3014
+  }
+ ],
+ "scarcity": [
+  {
+   "train_days": 2,
+   "rows": 192,
+   "Ridge": 0.6461,
+   "Random forest": 0.5141,
+   "HistGB": 0.6629,
+   "MLP": 1.1802,
+   "LSTM proxy": 0.5914
+  },
+  {
+   "train_days": 4,
+   "rows": 384,
+   "Ridge": 0.5002,
+   "Random forest": 0.3859,
+   "HistGB": 0.4435,
+   "MLP": 0.8743,
+   "LSTM proxy": 0.475
+  },
+  {
+   "train_days": 8,
+   "rows": 766,
+   "Ridge": 0.4047,
+   "Random forest": 0.3757,
+   "HistGB": 0.3902,
+   "MLP": 0.4315,
+   "LSTM proxy": 0.3782
+  },
+  {
+   "train_days": 16,
+   "rows": 1492,
+   "Ridge": 0.4164,
+   "Random forest": 0.3363,
+   "HistGB": 0.3492,
+   "MLP": 0.3614,
+   "LSTM proxy": 0.2976
+  },
+  {
+   "train_days": 24,
+   "rows": 2190,
+   "Ridge": 0.4066,
+   "Random forest": 0.3204,
+   "HistGB": 0.3125,
+   "MLP": 0.3409,
+   "LSTM proxy": 0.2831
+  }
+ ],
+ "stress_baseline": {
+  "Ridge": 0.3960688647211506,
+  "Random forest": 0.3106923449342064,
+  "HistGB": 0.3094571052005583,
+  "MLP": 0.3601522899685448,
+  "LSTM proxy": 0.28171840736342796
+ },
+ "env": {
+  "python": "3.11.9",
+  "pandas": "3.0.6",
+  "numpy": "2.4.6",
+  "sklearn": "1.9.1",
+  "torch": "2.14.1+cpu"
+ }
+}
